@@ -5,7 +5,7 @@ Datum: 2026-09-30
 Kurs: Introduktion till yrkesrollen och grunderna i IT-infrastruktur
 
 ## 2. Labbmiljö och nätverk
-I denna labb så har jag användt mig utav två virtuella maskiner i virtual box, vilket var windows och lubuntu. Jag har konfiguerat båda maskinerina inom samma nätverk för att göra det möjligt för maskinerna att kommunicera med varandra. 
+I denna labb så har jag användt mig utav två virtuella maskiner i virtual box, vilket var windows och lubuntu. Jag har konfiguerat båda maskinerna inom samma nätverk för att göra det möjligt för maskinerna att kommunicera med varandra. 
 
 ## Nätverkskonfiguration
 
@@ -50,3 +50,11 @@ Jag gav gruppen konsulter behörigheten Modify genom att använda:
 ### Felsökning
 I samband med att jag skulle konfiguera behörigheterna så råkade jag först skriva icals istället för icacls, vilket ledde till ett felmeddelande. Efter rättning utav kommandot så fungerade det.
 ![Windows behörigheter och felsökning](images/windows-behorigheter-och-felsokning.jpeg)
+## AI-stöd och kritisk utvärdering
+Jag använde mig utav chatGPT som stöd i denna uppgift. Chat GPT fick vara mitt stöd i att främst förklara uppgiften och bryta ner det så att det var enklare att förstå. Något som stack ut var när jag fastnade i nätverkskonfigurationen i Lubuntu. Windows fungerade bra och jag pingade till Lubuntu, men det gick inte att pinga ifrån Lubuntu till Windows och jag förstod inte riktigt varför.
+## Exempel på AI-användning  
+Jag förklarade för AI att jag kunde pinga ifrån windows till lubuntu utan konstigheter, men att det inte gick att pinga ifrån lubuntu till windows. Sedan så frågade jag vad jag möjligen kan göra eller kika på för att lösa detta. Svaret jag fick var väldigt vagt och ledde egentligen inte till att jag lyckades lösa problemet, utan tvärtom. Massvis med tid slösades på att gå runt i cirklar. AI bad mig dels att dubbelkolla ifall maskinerna verkligen låg på samma nätverk och att IP addresserna var korrekta, vilket jag redan hade trippelkollat innan jag vände mig till AI. Detta ledde till att jag kontrollerade sådant som redan var konfiguerat, ett x antal gånger. AI nämnde även att brandväggen i Windows kunde vara en orsak, utan att förstå problemet. Inte nog med det, så nämnde AI att jag tillfälligt kunde stänga ner brandväggen i Windows, vilket fick mig att bli väldigt kritisk. 
+På grund utav detta, så kunde jag inte helt lita på AI:s svar och fick felsöka på egen hand. När jag felsökte så kontrollerade jag konfigurationen steg för steg. Sedan bestämde jag mig för att testa skapa en ny nätverksprofil i Lubuntu, på samma interface som innan och samma ip adress. Därefter fungerade det. Detta var ett typiskt "stäng av och sätt på datorn"- situation, men ett tydligt exempel på att AI inte kan lösa alla våra problem.
+### Prompt och AI-svar
+![Prompt till ChatGPT](images/ai-prompt.jpg)
+![Svar från ChatGPT](images/ai-svar.jpg)
