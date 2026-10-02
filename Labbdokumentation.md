@@ -40,3 +40,13 @@ För att lösa detta problem så la jag till min användare, "biiga", i konsultg
 ### Verifiering av behörigheter
 När jag gjorde klart dessa ändringar så kontrollerade jag behörigheterna på nytt. Då fick jag svaret att katalogen hade behörighten 750 och textfilen 640.
 ![Verifiering av Linux-behörigheter](images/linux-behorigheter.jpeg)
+## Windows -filer och behörigheter
+Jag skapade en katalog C:\Systementor\KonsultData och en textfil, anteckningar.txt. Sedan skapade jag gruppen Konsulter samt la till min egen användare, biiga. Slutligen så konfiguerade jag behörigheten i Powershell.
+### Konfiguration av behörigheter
+Jag tog bort ärvda behörigheter genom att använda:
+`icacls "C:\Systementor\KonsultData" /inheritance:r`
+Jag gav gruppen konsulter behörigheten Modify genom att använda:
+`icacls "C:\Systementor\KonsultData" /grant "Konsulter:(OI)(CI)M"`
+### Felsökning
+I samband med att jag skulle konfiguera behörigheterna så råkade jag först skriva icals istället för icacls, vilket ledde till ett felmeddelande. Efter rättning utav kommandot så fungerade det.
+![Windows behörigheter och felsökning](images/windows-behorigheter-och-felsokning.jpeg)
